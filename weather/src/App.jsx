@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import cold from './assets/cold.jpg'
 import Descriptions from './components/Descriptions'
 
+import { getFormattedWeatherData } from './WeatherServices'
+
 function App() {
+
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+      const data = await getFormattedWeatherData('paris');
+    }
+    fetchWeatherData();
+  }, [])
+
+
 
   return (
     <div className='app' style={{ backgroundImage: `url(${cold})` }}>
