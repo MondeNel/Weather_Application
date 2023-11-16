@@ -24,11 +24,12 @@ export const getFormattedWeatherData = async (city, units = 'metric') => {
         return {
             description,
             iconURL,
-            temp, // Add the temperature property here
+            temp,
             feels_like,
             temp_max,
             temp_min,
             pressure,
+            humidity,
             speed,
             country,
             name,
