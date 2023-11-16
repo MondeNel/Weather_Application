@@ -1,20 +1,24 @@
 import React from 'react';
 import './Descriptions.css';
 
+// Importing icons from react-icons
 import { FaArrowDown, FaArrowUp, FaWind } from "react-icons/fa";
 import { BiHappy } from 'react-icons/bi';
 import { MdCompress, MdOutlineWaterDrop } from 'react-icons/md';
 
+// Functional component Descriptions
 const Descriptions = ({ units, weather }) => {
+    // Determine temperature and wind units based on the selected unit system
     const tempUnit = units === 'metric' ? '°C' : '°F';
     const windUnit = units === 'metric' ? 'm/s' : 'm/h';
 
+    // Array of objects representing different weather cards
     const cards = [
         {
             id: 1,
             icon: <FaArrowDown />,
             title: 'min',
-            data: weather.temp_min.toFixed(),
+            data: weather.temp_min.toFixed(), // Format temperature data
             unit: tempUnit,
         },
         {
@@ -42,6 +46,7 @@ const Descriptions = ({ units, weather }) => {
             id: 5,
             icon: <MdOutlineWaterDrop />,
             title: 'humidity',
+            // Check if humidity data is available, otherwise set to 'N/A'
             data: weather && weather.humidity !== undefined ? weather.humidity : 'N/A',
             unit: '%',
         },
@@ -49,11 +54,12 @@ const Descriptions = ({ units, weather }) => {
             id: 6,
             icon: <FaArrowDown />,
             title: 'wind speed',
-            data: weather.speed.toFixed(),
+            data: weather.speed.toFixed(), // Format wind speed data
             unit: windUnit,
         },
     ];
 
+    // Render the weather cards
     return (
         <div className="section section__descriptions">
             {cards.map(({ id, icon, title, data, unit }) => (
@@ -69,4 +75,5 @@ const Descriptions = ({ units, weather }) => {
     );
 };
 
+// Export the Descriptions component as the default export
 export default Descriptions;
