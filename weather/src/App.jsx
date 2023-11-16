@@ -7,7 +7,8 @@ import { getFormattedWeatherData } from './WeatherServices'
 
 function App() {
 
-  const [weather, setWeather] = useState(null)
+  const [weather, setWeather] = useState(null);
+  const [units, setUnits] = useState('metric')
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -43,12 +44,12 @@ function App() {
 
 
                 <div className="temperature">
-                  <h1>25 °C</h1>
+                  <h1>{`${weather.temp.toFixed()} °C`}</h1>
                 </div>
               </div>
 
               {/* bottom description */}
-              <Descriptions />
+              <Descriptions weather={weather} units={units} />
             </div>
 
           )

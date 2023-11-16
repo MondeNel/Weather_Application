@@ -9,7 +9,11 @@ export const getFormattedWeatherData = async (city, units = 'metric') => {
         .then((response) => response.json())
         .then((data) => data);
 
-    const { weather, main, wind, sys, name } = data;
+    const { weather, main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
+        wind: { speed },
+        sys: { country },
+        name,
+    } = data;
 
     if (Array.isArray(weather) && weather.length > 0) {
         const { description, icon } = weather[0];
@@ -20,12 +24,13 @@ export const getFormattedWeatherData = async (city, units = 'metric') => {
         return {
             description,
             iconURL,
-            feels_like: main.feels_like,
-            temp_max: main.temp_max,
-            temp_min: main.temp_min,
-            pressure: main.pressure,
-            speed: wind.speed,
-            country: sys.country,
+            temp, // Add the temperature property here
+            feels_like,
+            temp_max,
+            temp_min,
+            pressure,
+            speed,
+            country,
             name,
         };
     }
