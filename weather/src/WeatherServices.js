@@ -8,5 +8,25 @@ export const getFormattedWeatherData = async (city, units = 'metric') => {
         .then((response) => response.json())
         .then((data) => data);
 
-    console.log(data);
-}
+
+    const { weather, main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
+        wind: { speed },
+        sys: { country },
+        name,
+    } = data;
+
+
+    const { description, icon } = weather[0];
+
+    return {
+        description,
+        icon,
+        feels_like,
+        temp_max,
+        temp_min,
+        pressure,
+        speed,
+        country,
+        name,
+    };
+};
