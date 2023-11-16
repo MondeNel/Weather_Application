@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import cold from './assets/cold.jpg'
+import Descriptions from './components/Descriptions'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           </div>
 
           {/* bottom description */}
+          <Descriptions />
         </div>
       </div>
     </div>
