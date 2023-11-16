@@ -1,4 +1,4 @@
-# 🌦️ Weather App
+# 🌦️ 🌡️ Weather App
 
 ## Overview
 
@@ -38,7 +38,12 @@ This Weather App allows users to check the current weather conditions for a spec
 
 2. 🚀 Press Enter or click outside the input field to fetch and display the weather information.
 
-3. 🌡️ Click the temperature unit button to switch between Celsius and Fahrenheit.
+## Preview
+
+![Weather App Preview](https://github.com/MondeNel/Weather_Application/blob/587e5b07b1a3a31eb2699c8301d7f986b26c2d1d/Screenshot%20(17).png)
+
+![Weather App Preview](https://github.com/MondeNel/Weather_Application/blob/587e5b07b1a3a31eb2699c8301d7f986b26c2d1d/Screenshot%20(18).png)
+
 
 ## Dependencies
 
